@@ -32,28 +32,38 @@ public class SPPFAlvizoCEjemploMenu {
         switch (opEntrada){
             case 1:
                 System.out.println("Bienvenido al cálculo de áreas");
-                System.out.println("Introduce el lado del cuadrado");
-                lado=kb.nextDouble();
+                mensajePedirDatos();
+                //Llamamos el método para solicitar los datos 
+                //y lo que devuelve lo guardamos en la variable lado
+                lado=mensajePedirDatos();
                 resultado = Math.pow(lado,2);
                 System.out.println("El área del cuadrado es "+ resultado);
                 break;
             case 2:
                 System.out.println("Bienvenido al cálculo de perímetros");
-                System.out.println("Introduce el lado del cuadrado");
-                lado=kb.nextDouble();
+                lado = mensajePedirDatos();
                 resultado = lado * 4;
                 System.out.println("El perímetro del cuadrado es "+ resultado);
                 break;
             case 3:
                 System.out.println("Bienvenido al cálculo de volúmenes");
-                System.out.println("Introduce el lado del cuadrado");
-                lado=kb.nextDouble();
-                resultado = Math.pow(lado, 3);
+                //Podemos omitir el guardar lo que devuelve el métodos
+                //en una variable, colocando el mismo método en su lugar.
+                resultado = Math.pow(mensajePedirDatos(), 3);
                 System.out.println("El volumen del cubo es " + resultado);
                 break;
             default:
                 System.out.println("Adiós!");      
         }
+    }
+    
+    static double  mensajePedirDatos (){
+        //Variables
+        double lado;
+        Scanner kb = new Scanner (System.in);
+        System.out.println("Introduce el lado del cuadrado");
+        lado=kb.nextDouble();
+        return lado;
     }
     
 }
