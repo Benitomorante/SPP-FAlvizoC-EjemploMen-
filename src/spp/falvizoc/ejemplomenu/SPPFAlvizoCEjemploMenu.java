@@ -18,9 +18,10 @@ public class SPPFAlvizoCEjemploMenu {
         //Variables.
         int opEntrada;
         Scanner kb = new Scanner (System.in);
+        double lado, resultado;
         
         //Desplegamos menú
-        System.out.println("Calculadora de áreas, perímetros y volúmenes");
+        System.out.println("Calculadora de áreas, perímetros y volúmenes de un Cuadrado");
         System.out.println("Introduzca la opción deseada");
         System.out.println("1. Calcular áreas");
         System.out.println("2. Calcular perímetros");
@@ -31,12 +32,24 @@ public class SPPFAlvizoCEjemploMenu {
         switch (opEntrada){
             case 1:
                 System.out.println("Bienvenido al cálculo de áreas");
+                System.out.println("Introduce el lado del cuadrado");
+                lado=kb.nextDouble();
+                resultado = Math.pow(lado,2);
+                System.out.println("El área del cuadrado es "+ resultado);
                 break;
             case 2:
                 System.out.println("Bienvenido al cálculo de perímetros");
+                System.out.println("Introduce el lado del cuadrado");
+                lado=kb.nextDouble();
+                resultado = lado * 4;
+                System.out.println("El perímetro del cuadrado es "+ resultado);
                 break;
             case 3:
                 System.out.println("Bienvenido al cálculo de volúmenes");
+                System.out.println("Introduce el lado del cuadrado");
+                lado=kb.nextDouble();
+                resultado = Math.pow(lado, 3);
+                System.out.println("El volumen del cubo es " + resultado);
                 break;
             default:
                 System.out.println("Adiós!");      
